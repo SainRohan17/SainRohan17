@@ -17,9 +17,6 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "Rohan Sain",
   description: "Personal portfolio of Rohan Sain, a frontend and software developer. Shipped with precision.",
-  icons: {
-    icon: "/icon.svg",
-  },
 };
 
 export default function RootLayout({
