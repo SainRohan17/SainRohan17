@@ -33,6 +33,8 @@ const projectMeta: Record<
     },
 };
 
+const basePath = process.env.NODE_ENV === "production" ? "/SainRohan17" : "";
+
 export default function ScreenshotMockup({ project, mode, variant }: ScreenshotMockupProps) {
     if (mode === "desktop") {
         return <DesktopFrame project={project} variant={variant} />;
@@ -64,7 +66,7 @@ function DesktopFrame({ project, variant }: { project: string; variant?: "dashbo
 
             <div className="flex-1 bg-white relative overflow-hidden">
                 <Image
-                    src={imgSrc}
+                    src={`${basePath}${imgSrc}`}
                     alt={`${meta.label} desktop screenshot`}
                     fill
                     className="object-cover object-top"
@@ -89,7 +91,7 @@ function MobileFrame({ project }: { project: string }) {
 
                 <div className="flex-1 overflow-hidden relative">
                     <Image
-                        src={meta.mobileImg}
+                        src={`${basePath}${meta.mobileImg}`}
                         alt={`${meta.label} mobile screenshot`}
                         fill
                         className="object-cover object-top"
